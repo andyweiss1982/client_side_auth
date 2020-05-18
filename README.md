@@ -1,8 +1,6 @@
-# Client Side Auth Demo
+# ~~Terrible Idea~~ Client Side Auth Demo
 
-## WARNING, this is no way to do auth on your website, it's just the most basic demo possible of the _concept_ of authentication / authorization!
-
-## We are storing plaintext passwords ON THE CLIENT.
+## WARNING, DON'T TRY THIS AT HOME: We are storing _PLAINTEXT_ passwords _ON THE CLIENT_.
 
 ## SETUP
 
