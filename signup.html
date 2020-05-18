@@ -11,10 +11,16 @@
     <main>
       <form id="form">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" required />
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" minlength="8" />
-        <input type="submit" value="Sign Up" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          minlength="8"
+          required
+        />
+        <button type="submit">Sign Up</button>
       </form>
       <a href="/signin">Sign In</a>
     </main>
