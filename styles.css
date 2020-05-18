@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+}
+
+header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+main {
+  margin: 0 auto;
+  margin-top: 5rem;
+  max-width: 25rem;
+  display: grid;
+  place-items: center;
+}
+
+form,
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  margin-bottom: 1rem;
+}

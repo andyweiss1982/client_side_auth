@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <header><h1>Sign Up</h1></header>
+    <link rel="stylesheet" href="styles.css" />
+    <main>
+      <form id="form">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" minlength="8" />
+        <input type="submit" value="Sign Up" />
+      </form>
+      <a href="/signin">Sign In</a>
+    </main>
+    <script>
+      if (localStorage.getItem("currentUser")) {
+        window.location = "/";
+      }
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const { email, password } = form.elements;
+        if (localStorage.getItem(email.value)) {
+          alert(`${email.value} already exists`);
+          form.reset();
+        } else {
+          localStorage.setItem(email.value, password.value);
+          localStorage.setItem("currentUser", email.value);
+          window.location = "/";
+        }
+      });
+    </script>
+  </body>
+</html>

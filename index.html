@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header><h1>Welcome</h1></header>
+    <main id="main"></main>
+    <script>
+      const currentUser = localStorage.getItem("currentUser");
+      if (currentUser) {
+        main.innerHTML = `
+          <h2>Hello, ${currentUser}</h2>
+          <a href="#" onclick="signout()">Sign Out</a>
+          <a href="#" onclick="deleteAccount()">Delete Account</a>`;
+      } else {
+        window.location = "/signin";
+      }
+      const signout = () => {
+        localStorage.removeItem("currentUser");
+        window.location = "/signin";
+      };
+      const deleteAccount = () => {
+        if (confirm("Are you sure?")) {
+          localStorage.removeItem(currentUser);
+          localStorage.removeItem("currentUser");
+          window.location = "/signup";
+        }
+      };
+    </script>
+  </body>
+</html>
